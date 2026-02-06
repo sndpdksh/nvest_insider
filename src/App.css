@@ -1,0 +1,229 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dark mode app */
+.app.dark-mode-app {
+  background: #0a1628;
+}
+
+/* Navigation */
+.app-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Dark mode navigation */
+.app.dark-mode-app .app-nav {
+  background: #0d1f3c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.app.dark-mode-app .nav-title {
+  color: #ffffff;
+}
+
+.app.dark-mode-app .nav-tab {
+  background: rgba(255, 255, 255, 0.05);
+  color: #8899a6;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.app.dark-mode-app .nav-tab:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e0e6ed;
+}
+
+.app.dark-mode-app .nav-tab.active {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border-color: #3b82f6;
+}
+
+/* Light mode app (for chat view) */
+.app.light-mode-app {
+  background: #f5f7fa;
+}
+
+.app.light-mode-app .app-content {
+  padding: 0;
+  overflow: hidden;
+}
+
+.app.light-mode-app .app-nav {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #e0e4e8;
+}
+
+.app.light-mode-app .nav-title {
+  color: #1a1a2e;
+}
+
+.app.light-mode-app .nav-tab {
+  background: #f0f2f5;
+  color: #667085;
+  border: 1px solid #e0e4e8;
+}
+
+.app.light-mode-app .nav-tab:hover {
+  background: #e5e7eb;
+  color: #1a1a2e;
+}
+
+.app.light-mode-app .nav-tab.active {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border-color: #3b82f6;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+}
+
+.nav-logo-image {
+  height: 36px;
+  width: auto;
+}
+
+/* Dark mode logo - invert to white */
+.app.dark-mode-app .nav-logo-image {
+  filter: brightness(0) invert(1);
+}
+
+/* Light mode logo - original colors */
+.app.light-mode-app .nav-logo-image {
+  filter: none;
+}
+
+/* App name "Insider" text */
+.nav-app-name {
+  font-size: 1.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #0035BC;
+}
+
+/* Dark mode app name */
+.app.dark-mode-app .nav-app-name {
+  color: #ffffff;
+}
+
+/* Light mode app name */
+.app.light-mode-app .nav-app-name {
+  color: #0035BC;
+}
+
+.nav-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-tab {
+  padding: 10px 20px;
+  background: #f0f2f5;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-tab:hover {
+  background: #e0e2e5;
+  color: #333;
+}
+
+.nav-tab.active {
+  background: #0078d4;
+  color: white;
+}
+
+/* Main Content */
+.app-content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Dark mode content - full width for ChatBot */
+.app.dark-mode-app .app-content {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-nav {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .nav-brand {
+    gap: 6px;
+  }
+
+  .nav-logo-image {
+    height: 28px;
+  }
+
+  .nav-app-name {
+    font-size: 1.4rem;
+  }
+
+  .nav-tabs {
+    gap: 4px;
+  }
+
+  .nav-tab {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .app-content {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-nav {
+    padding: 6px 10px;
+  }
+
+  .nav-logo-image {
+    height: 24px;
+  }
+
+  .nav-app-name {
+    font-size: 1.2rem;
+  }
+
+  .nav-tab {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+}
